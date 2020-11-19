@@ -10,13 +10,27 @@
       body {
         border: 4px solid aqua;
         border-radius: 15px;
+        /* text-decoration: line-through; */
       }
 
-      ul li:first-child, li:last-child {
+      /* first and last item in list is red */
+      li:first-child, li:last-child {
         background-color: rgba(255, 0, 0, 0.74);
         
         padding: 5px;
       }
+
+      /* using sibling combinator we put the line-through and crossed every element sted the 1.  */
+      h3 ~ ul {
+        text-decoration: line-through;
+      }
+
+      /* using a class we override the background color for this sub list */
+      .sub-ul > li {
+        background-color: yellow;
+      }
+
+      
 
 
     </style>
@@ -30,10 +44,20 @@
         <li>chips</li>
         <li>bananas</li>
         <li>vegetables, I guess</li>
+        
+        <ul class="sub-ul">
+          <li>drinks</li>
+          <li>spices</li> 
+          <li>cosmetics</li>
+        </ul>
+
         <li>food</li>
+       
       </ul>
+
     </section>
 
 
   </body>
 </html>
+
